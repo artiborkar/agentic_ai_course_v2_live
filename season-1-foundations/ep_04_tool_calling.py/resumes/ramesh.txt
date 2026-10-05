@@ -1,0 +1,6 @@
+Name: Ramesh Kumar
+Role: Python Developer
+Experience: 4 years
+Skills: Python, FastAPI, Django, PostgreSQL, Docker, Git, REST APIs
+Background:
+4 years of experience building scalable backend services in Python. Experienced with FastAPI, Django ORM, and writing clean asynchronous code. Proficient with PostgreSQL query optimization and Docker containerization.

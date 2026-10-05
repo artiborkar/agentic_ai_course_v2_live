@@ -1,0 +1,6 @@
+Name: Sneha Sharma
+Role: Frontend Developer
+Experience: 3 years
+Skills: React, Next.js, JavaScript, TypeScript, Tailwind CSS, Redux, HTML/CSS
+Background:
+3 years of experience developing responsive web applications. Specialized in React component architecture, Next.js for SSR, and modern CSS frameworks like Tailwind.

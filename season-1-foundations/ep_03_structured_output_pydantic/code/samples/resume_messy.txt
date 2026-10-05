@@ -1,4 +1,4 @@
-hey so my name is Arti Borkar, been working as a backend dev for about 4 and a half
+hey so my name is Arti Borkar, been working as a backend dev for about -4 and a half
 years now. you can reach me at arti.borkar@example.com or just ping on linkedin.
 mostly i do python, fastapi, postgres, some docker and aws. recently started learning
 langgraph and building ai agents which is super fun. also know a bit of react but not my

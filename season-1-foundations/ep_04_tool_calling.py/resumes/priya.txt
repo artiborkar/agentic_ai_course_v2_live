@@ -1,0 +1,6 @@
+Name: Priya Singh
+Role: DevOps Engineer
+Experience: 5 years
+Skills: AWS, Kubernetes, Docker, Terraform, CI/CD (GitHub Actions), Linux
+Background:
+5 years of hands-on experience in cloud infrastructure and automating deployment pipelines. Expert in AWS services, managing Kubernetes clusters, and infrastructure-as-code with Terraform.

@@ -1,0 +1,296 @@
+# 6-Month Agentic AI → First Job Roadmap
+
+## Month 1 — Python Foundation
+
+**Learn:**
+
+* Python basics and data structures
+* Functions
+* OOP
+* Exception handling
+* File handling
+* Modules and packages
+* `os`, `pathlib`
+* Virtual environments
+* Git and GitHub
+
+**Practice projects:**
+
+1. Expense Tracker
+2. File Organizer
+3. Student Management System
+
+**Goal:** Python code khud se likhna, bina tutorial copy kiye.
+
+---
+
+## Month 2 — AI, LLM & Pydantic
+
+**Learn:**
+
+* AI vs ML vs Generative AI
+* LLM basics
+* Prompt engineering
+* Tokens and context
+* Temperature
+* API usage
+* `.env` and environment variables
+* Pydantic
+* Structured output
+* JSON
+
+**Practice projects:**
+
+1. AI Text Summarizer
+2. Resume Information Extractor
+3. AI Question-Answer application
+
+**Goal:** Python se LLM ko call karke structured response lena.
+
+---
+
+## Month 3 — LangChain & Tool Calling
+
+**Learn:**
+
+* `HumanMessage`
+* `AIMessage`
+* `SystemMessage`
+* `ToolMessage`
+* `.invoke()`
+* `@tool`
+* `StructuredTool`
+* `bind_tools()`
+* Tool calling
+* Multiple tools
+
+**Practice:**
+
+Build these tools yourself:
+
+```text
+Calculator Tool
+      ↓
+Weather Tool
+      ↓
+Resume Search Tool
+      ↓
+Web/Search Tool
+```
+
+Then combine them into one application.
+
+**Main project:**
+
+### AI Resume Screening Assistant
+
+User:
+
+```text
+Can we select Arti for a Python developer interview?
+```
+
+Agent:
+
+```text
+→ get_resume()
+→ analyze skills
+→ compare requirements
+→ give structured result
+```
+
+**Goal:** Tool calling ko conceptually aur practically strong karna.
+
+---
+
+## Month 4 — AI Agents + RAG
+
+**Learn:**
+
+* AI agents
+* Agent loop
+* Multiple tools
+* Agent state
+* Memory basics
+* RAG
+* Embeddings
+* Vector databases
+* FAISS
+* Document chunking
+* Retrieval
+
+**Main projects:**
+
+### 1. Personal AI Assistant
+
+Agent should be able to:
+
+* Calculate
+* Search
+* Answer questions
+* Use different tools
+
+### 2. PDF RAG Chatbot
+
+```text
+PDF
+ ↓
+Extract text
+ ↓
+Chunks
+ ↓
+Embeddings
+ ↓
+FAISS
+ ↓
+Retrieve relevant information
+ ↓
+LLM
+ ↓
+Answer
+```
+
+**Goal:** Apne documents se questions answer karne wala AI application banana.
+
+---
+
+## Month 5 — LangGraph + Advanced Agentic AI
+
+**Learn:**
+
+* LangGraph
+* State
+* Nodes
+* Edges
+* Conditional routing
+* Multi-step workflows
+* Agent orchestration
+* Human-in-the-loop basics
+* MCP fundamentals
+
+**Main project:**
+
+### Research Agent
+
+```text
+User Question
+      ↓
+Research Agent
+      ↓
+Search
+      ↓
+Collect information
+      ↓
+Analyze
+      ↓
+Generate report
+```
+
+**Goal:** Multi-step agentic workflow independently build karna.
+
+---
+
+## Month 6 — Job Preparation & Deployment
+
+Ab naye concepts continuously add karne ke bajay **job-ready banna** important hai.
+
+**Learn/practice:**
+
+* FastAPI
+* REST APIs
+* Docker
+* Git/GitHub
+* Testing
+* Logging
+* Basic cloud/deployment
+* SQL basics
+* Interview preparation
+
+### Final Portfolio
+
+GitHub par at least **3 strong projects** rakho:
+
+**Project 1:** AI Resume Screening Agent
+**Project 2:** PDF RAG Chatbot
+**Project 3:** Multi-tool / Research Agent
+
+Har project mein:
+
+* Clean README
+* Architecture diagram
+* Setup instructions
+* Screenshots/demo
+* Requirements
+* Proper Git commits
+* Clear explanation of technologies
+
+---
+
+# Daily Practice Routine
+
+Agar aap approximately **2–3 hours daily** de sakti ho:
+
+```text
+30 min → Theory
+60 min → Coding
+30 min → Practice without watching
+30 min → Project
+```
+
+Aur ek important rule:
+
+> **Video dekhna = learning ka first step. Coding yourself = actual practice.**
+
+Example: Aaj `bind_tools()` padha?
+
+Sirf video dekhkar next topic par mat jao.
+
+Khud:
+
+```python
+llm_with_tools = llm.bind_tools([get_weather])
+```
+
+likho → tool call test karo → error intentionally create karo → error solve karo → phir ek **new tool** khud banao.
+
+---
+
+# Job Preparation
+
+Month 5–6 se applications gradually start kar sakti ho. Search only for “Agentic AI Engineer” mat karo.
+
+Search these roles too:
+
+* AI Engineer
+* Generative AI Engineer
+* LLM Engineer
+* AI/ML Engineer
+* AI Application Developer
+* Python Developer — GenAI
+* Junior AI Engineer
+
+Aur interview ke liye:
+
+**Python → OOP → APIs → LLM → Pydantic → LangChain → Tool Calling → RAG → Agents → LangGraph → Projects**
+
+ko explain karne ki practice karo.
+
+### Final Target
+
+```text
+Learn
+  ↓
+Practice
+  ↓
+Build
+  ↓
+GitHub
+  ↓
+Resume
+  ↓
+Interview Practice
+  ↓
+Job Applications
+```
+
+**Sabse important:** 6 months ka goal “bahut saare topics complete karna” nahi hai. Goal hai **3–4 real working AI projects banana aur unhe confidently explain kar pana**.

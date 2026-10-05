@@ -1,3 +1,5 @@
+# Add a current_role: str | None field to Resume and re-run. Did it extract correctly?
+
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -19,6 +21,7 @@ class Resume(BaseModel):
     email : str | None = Field(description = "Get email if present,else None")
     years_experience: float = Field(description = "Total year of professional experience")
     skills : list[str] = Field(description ="List of techinical skills mentions")
+    current_role: str | None = Field(description = " Current Role of the Job.")
 
 def read_sample(filename: str)-> str:
     """Read a fixed , shipped sample file a safely (no user-controlled paths)."""
@@ -43,7 +46,7 @@ def extract_resume(text: str)-> Resume | None :
             f"out : {usage.get("output_tokens")} total : {usage.get('total_tokens')}[/dim]")
 
     if result.get("parsing_error"):
-        print("[red]Model output failed validtion; handle/retry instead of trusting it.[/read]")
+        print("[red]Model output failed validtion; handle/retry instead of trusting it.[/red]")
         return None
     return result.get("parsed")
 

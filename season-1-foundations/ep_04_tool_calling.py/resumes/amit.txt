@@ -1,0 +1,6 @@
+Name: Amit Patel
+Role: Data Analyst
+Experience: 2.5 years
+Skills: SQL, Power BI, Excel, Tableau, Python (Pandas, Matplotlib), Data Cleaning
+Background:
+2.5 years of experience analyzing business metrics and building dashboards in Power BI and Tableau. Strong in SQL queries and data wrangling with Python Pandas.
