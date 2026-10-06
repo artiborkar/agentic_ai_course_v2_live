@@ -1,5 +1,6 @@
 import os 
 from pathlib import Path
+import random
 from dotenv import load_dotenv
 from rich import print
 from langchain_core.tools import tool
@@ -8,12 +9,17 @@ from langchain.chat_models import init_chat_model
 load_dotenv()
 MODEL = os.getenv("GROQ_MODEL","groq:qwen/qwen3.8-27b")
 
-MAX_STEPS = 5
+MAX_STEPS = 4
+# MAX_STEPS = 1
 
 
 @tool 
 def search(query :str) -> str:
     """Look up a fact (mocked for the demo)."""
+
+    if random.random() < 0.5:
+        raise RuntimeError("Search tool failed ramdomly.")
+
     facts = {
                 "population of japan" : "Japan's population is about 124 million.",
                 "population of india" : "India's population is about 1.43 billion.",
@@ -37,7 +43,32 @@ def calculator(expression:str) -> str:
     except Exception:
         return "Error: invaled expression."
 
-TOOLS = {t.name: t for t in [search,calculator]}
+
+
+@tool
+def currency_convert(amount: float, from_currency: str, to_currency: str) -> str:
+    """Convert currency using mocked exchange rates."""
+
+    rates = {
+        ("USD", "INR"): 88.0,
+        ("INR", "USD"): 1 / 88.0,
+        ("EUR", "INR"): 103.0,
+        ("INR", "EUR"): 1 / 103.0,
+    }
+
+    from_currency = from_currency.upper()
+    to_currency = to_currency.upper()
+
+    key = (from_currency, to_currency)
+
+    if key not in rates:
+        return f"Error: conversion from {from_currency} to {to_currency} is not supported."
+
+    converted = amount * rates[key]
+
+    return f"{converted:.2f} {to_currency}"
+
+TOOLS = {t.name: t for t in [search,calculator,currency_convert]}
 
 def run_tool(name: str ,args: dict) ->str:
     fn = TOOLS.get(name)
@@ -60,6 +91,8 @@ def run_agent(question:str) ->str:
     print(f"[bold blue]User:[/bold blue] {question}\n")
 
     for step in range(1, MAX_STEPS):
+        print(f"[cyan]Step {step} - Message count: {len(messages)}[/cyan]")
+
         ai = llm.invoke(messages)
         messages.append(ai)
 
@@ -87,13 +120,24 @@ def main():
     # responce2= run_agent(question2)
     # print(f"\n[bold green]Agent:[/bold green] {responce2}")
 
-    while True:
-        print("[bold cyan]USER > [/bold cyan]",end="")
-        user_input = input()
-        if user_input.lower() == "exit":
-            break
-        responce = run_agent(user_input)
-        print(f"\n[bold green] Agent > [/bold green] {responce}")
+    # question3= "Search for the population of India, convert 100 USD to INR, and calculate the result multiplied by 2."
+    # responce3= run_agent(question3)
+    # print(f"\n[bold green]Agent:[/bold green] {responce3}")
+
+    question4= "Search for the population of India, convert 100 USD to INR, and calculate the result × 2."
+    responce4= run_agent(question4)
+    print(f"\n[bold green]Agent:[/bold green] {responce4}")
+
+
+
+
+    # while True:
+    #     print("[bold cyan]USER > [/bold cyan]",end="")
+    #     user_input = input()
+    #     if user_input.lower() == "exit":
+    #         break
+    #     responce = run_agent(user_input)
+    #     print(f"\n[bold green] Agent > [/bold green] {responce}")
 
 
 if __name__ == "__main__":
